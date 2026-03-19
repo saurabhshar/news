@@ -1,0 +1,41 @@
+name: Daily Newspaper
+
+on:
+  schedule:
+    - cron: '0 5 * * *'   # 05:00 UTC = 06:00 CET / 07:00 CEST (summer)
+  workflow_dispatch:       # allows manual "Run workflow" button on GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Generate newspaper
+        run: python news.py --output-dir ./output
+
+      - name: Copy latest edition to index.html
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          cp output/${TODAY}.html output/index.html
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          keep_files: true      # keeps past editions (YYYY-MM-DD.html)
+          commit_message: "Daily edition ${{ github.run_id }}"

@@ -1,0 +1,201 @@
+feeds:
+  - name: "The Local Germany"
+    url: "https://feeds.thelocal.com/rss/de"
+    germany_priority: true
+  - name: "Deutsche Welle (Germany)"
+    url: "https://rss.dw.com/rdf/rss-en-ger"
+    germany_priority: true
+  - name: "Deutsche Welle (All)"
+    url: "https://rss.dw.com/rdf/rss-en-all"
+    germany_priority: true
+  - name: "Deutsche Welle (Business)"
+    url: "https://rss.dw.com/rdf/rss-en-eco"
+    germany_priority: true
+  - name: "Deutsche Welle (Sports)"
+    url: "https://rss.dw.com/rdf/rss-en-sports"
+    germany_priority: true
+  - name: "Deutsche Welle (Culture)"
+    url: "https://rss.dw.com/rdf/rss-en-cul"
+    germany_priority: true
+  - name: "Deutsche Welle (Science)"
+    url: "https://rss.dw.com/rdf/rss-en-scitech"
+    germany_priority: true
+  - name: "The Guardian (Germany)"
+    url: "https://www.theguardian.com/world/germany/rss"
+  - name: "BBC Europe"
+    url: "https://feeds.bbci.co.uk/news/world/europe/rss.xml"
+
+sections:
+  - name: "Politics & Government"
+    keywords:
+      - election
+      - bundestag
+      - coalition
+      - parliament
+      - minister
+      - chancellor
+      - government
+      - policy
+      - EU
+      - european union
+      - vote
+      - party
+      - SPD
+      - CDU
+      - Greens
+      - AfD
+      - FDP
+      - political
+      - democracy
+      - foreign policy
+      - sanctions
+      - NATO
+
+  - name: "Economy & Business"
+    keywords:
+      - inflation
+      - trade
+      - jobs
+      - energy
+      - markets
+      - economy
+      - economic
+      - GDP
+      - recession
+      - unemployment
+      - investment
+      - bank
+      - finance
+      - industry
+      - exports
+      - imports
+      - wage
+      - salary
+      - startup
+      - company
+      - corporation
+      - tax
+      - budget
+
+  - name: "Society & Immigration"
+    keywords:
+      - visa
+      - housing
+      - rent
+      - integration
+      - asylum
+      - health
+      - refugee
+      - migration
+      - immigrant
+      - citizenship
+      - welfare
+      - social
+      - pension
+      - healthcare
+      - hospital
+      - crime
+      - police
+      - discrimination
+      - racism
+      - protest
+      - rights
+      - law
+      - court
+      - justice
+
+  - name: "Sports"
+    keywords:
+      - bundesliga
+      - Bayern
+      - Dortmund
+      - Olympics
+      - formula 1
+      - F1
+      - football
+      - soccer
+      - tennis
+      - sport
+      - athlete
+      - championship
+      - tournament
+      - coach
+      - team
+      - player
+      - match
+      - goal
+      - stadium
+      - transfer
+
+  - name: "Education & Science"
+    keywords:
+      - university
+      - research
+      - climate
+      - AI
+      - artificial intelligence
+      - digital
+      - technology
+      - science
+      - study
+      - school
+      - education
+      - student
+      - professor
+      - innovation
+      - space
+      - environment
+      - sustainability
+      - renewable
+      - carbon
+      - emissions
+      - data
+      - cybersecurity
+
+  - name: "Culture & Entertainment"
+    keywords:
+      - festival
+      - music
+      - museum
+      - food
+      - travel
+      - film
+      - movie
+      - art
+      - culture
+      - entertainment
+      - theater
+      - concert
+      - exhibition
+      - fashion
+      - architecture
+      - literature
+      - book
+      - award
+      - celebrity
+      - oktoberfest
+      - carnival
+
+  - name: "Local & Regional"
+    keywords:
+      - Berlin
+      - Munich
+      - Hamburg
+      - Frankfurt
+      - Bavaria
+      - Cologne
+      - Stuttgart
+      - Düsseldorf
+      - Dresden
+      - Leipzig
+      - Saxony
+      - Brandenburg
+      - NRW
+      - North Rhine
+      - Baden
+      - regional
+      - city
+      - state
+      - Länder
+
+max_items_per_section: 8
