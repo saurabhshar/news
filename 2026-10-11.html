@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Germany Daily &mdash; October 11, 2026</title>
+  <style>
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+    /* ─── Variables ─── */
+    :root {
+      --ink:       #1c1c1c;
+      --ink-soft:  #3d3d3d;
+      --ink-faint: #767676;
+      --paper:     #faf7f2;
+      --paper-warm:#f2ede4;
+      --gold:      #b8860b;
+      --gold-light:#d4a843;
+      --rule:      #1c1c1c;
+      --rule-thin: #c8bfa8;
+      --red-flag:  #9b1c1c;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--gold); }
+
+    /* ─── Top ribbon ─── */
+    .top-ribbon {
+      background: var(--ink);
+      color: #aaa;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.45rem 2rem;
+    }
+    .top-ribbon span { color: #ccc; }
+
+    /* ─── Masthead ─── */
+    .masthead {
+      background: var(--paper);
+      border-top: 4px solid var(--ink);
+      border-bottom: 1px solid var(--rule-thin);
+      text-align: center;
+      padding: 2rem 1rem 1.4rem;
+      position: relative;
+    }
+    .masthead::after {
+      content: '';
+      display: block;
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--ink) 20%, var(--ink) 80%, transparent);
+      margin-top: 1.4rem;
+    }
+    .masthead .flag-line {
+      font-size: 1.4rem;
+      letter-spacing: 0.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--ink-faint);
+    }
+    .masthead h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+    .masthead .edition-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 0.7rem;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .masthead .edition-bar .dot { color: var(--rule-thin); }
+    .masthead .tagline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold);
+      margin-top: 0.3rem;
+    }
+
+    /* ─── Section nav bar ─── */
+    .section-nav {
+      background: var(--ink);
+      padding: 0 1rem;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .section-nav a {
+      display: inline-block;
+      color: #ccc;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.6rem 1rem;
+      border-right: 1px solid #333;
+      transition: color 0.15s, background 0.15s;
+    }
+    .section-nav a:first-child { border-left: 1px solid #333; }
+    .section-nav a:hover { color: #fff; background: #333; }
+
+    /* ─── Page wrapper ─── */
+    .page { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+
+    /* ─── Section block ─── */
+    .section-block { margin-bottom: 3rem; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      border-top: 3px double var(--ink);
+      padding-top: 0.5rem;
+      margin-bottom: 1.4rem;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+    .section-header .rule-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule-thin);
+      align-self: center;
+    }
+    .section-header .item-count {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+
+    /* ─── Article grid ─── */
+    .articles-grid {
+      display: grid;
+      gap: 0;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Lead story (first card) gets 2 columns × full height */
+    .articles-grid .article-card:first-child {
+      grid-column: span 2;
+      border-right: 1px solid var(--rule-thin);
+    }
+
+    /* ─── Article card ─── */
+    .article-card {
+      padding: 1.1rem 1.3rem 1rem;
+      border-top: 1px solid var(--rule-thin);
+      border-right: 1px solid var(--rule-thin);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    /* remove right border on last in each row */
+    .article-card:last-child { border-right: none; }
+
+    /* Germany badge */
+    .article-card.germany-priority::before {
+      content: 'GERMANY';
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #fff;
+      background: var(--red-flag);
+      padding: 0.15rem 0.45rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      align-self: flex-start;
+    }
+
+    .article-card .source-label {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .article-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    /* Lead story title bigger */
+    .articles-grid .article-card:first-child h3 {
+      font-size: 1.55rem;
+      line-height: 1.25;
+    }
+
+    .article-card .blurb {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      flex-grow: 1;
+      margin-bottom: 0.8rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .articles-grid .article-card:first-child .blurb {
+      -webkit-line-clamp: 7;
+      font-size: 0.95rem;
+    }
+
+    .article-card .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--rule-thin);
+      padding-top: 0.5rem;
+      margin-top: auto;
+      gap: 0.5rem;
+    }
+    .article-card .pub-time {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.68rem;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+    .article-card .read-more {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .article-card .read-more:hover { color: var(--gold); }
+
+    /* Hover lift */
+    .article-card {
+      transition: background 0.15s;
+    }
+    .article-card:hover { background: var(--paper-warm); }
+
+    /* ─── No items ─── */
+    .no-items {
+      font-style: italic;
+      color: var(--ink-faint);
+      font-size: 0.9rem;
+      padding: 1rem 0;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      border-top: 3px double var(--ink);
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+    }
+    footer .footer-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+    footer p {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      line-height: 1.7;
+    }
+    footer .sources {
+      text-align: right;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      line-height: 1.8;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .articles-grid .article-card:first-child {
+        grid-column: span 2;
+      }
+    }
+    @media (max-width: 560px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      .articles-grid .article-card:first-child {
+        grid-column: span 1;
+      }
+      .article-card { border-right: none; }
+      .top-ribbon { justify-content: center; }
+      .top-ribbon .hide-mobile { display: none; }
+      footer { grid-template-columns: 1fr; }
+      footer .sources { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top ribbon -->
+  <div class="top-ribbon">
+    <span>October 11, 2026</span>
+    <span class="hide-mobile">English-language news from Germany</span>
+    <span>62 stories &middot; 6 sources</span>
+  </div>
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="flag-line">&#127465;&#127466;</div>
+    <h1>Germany Daily</h1>
+    <div class="tagline">German news in English &mdash; for immigrants &amp; expats</div>
+    <div class="edition-bar">
+      <span>Thursday Edition</span>
+      <span class="dot">&bull;</span>
+      <span>October 11, 2026</span>
+      <span class="dot">&bull;</span>
+      <span>Vol. 1</span>
+    </div>
+  </header>
+
+  <!-- Section nav -->
+  <nav class="section-nav">
+    
+    <a href="#section-1">Politics &amp; Government</a>
+    
+    <a href="#section-2">Economy &amp; Business</a>
+    
+    <a href="#section-3">Society &amp; Immigration</a>
+    
+    <a href="#section-4">Sports</a>
+    
+    <a href="#section-5">Education &amp; Science</a>
+    
+    <a href="#section-6">Culture &amp; Entertainment</a>
+    
+    <a href="#section-7">Local &amp; Regional</a>
+    
+    <a href="#section-8">General News</a>
+    
+  </nav>
+
+  <!-- Main content -->
+  <main class="page">
+    
+    <section class="section-block" id="section-1">
+      <div class="section-header">
+        <h2>Politics &amp; Government</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Pakistan: President puts Khan stronghold province under emergency rule</h3>
+          
+          <p class="blurb">President Asif Ali Zardari has effectively suspended the provincial government in Khyber Pakhtunkhwa. The northwestern state is an epicenter of support for former PM Imran Khan and run by his PTI party.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 09:37</span>
+            <a class="read-more" href="https://www.dw.com/en/pakistan-president-puts-khan-stronghold-province-under-emergency-rule/a-79632530?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Germany)</div>
+          <h3>Germany sticks to Russia sanctions after Trump diesel deal</h3>
+          
+          <p class="blurb">After Washington announced a sanctions pause on Russian diesel, Germany has said it remains committed to pressuring Moscow and supporting Ukraine. More on DW.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 09:13</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-sticks-to-russia-sanctions-after-trump-diesel-deal/live-79627811?maca=en-rss-en-ger-1023-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>India&#39;s &#39;Cockroach&#39; movement leaders say &#39;the fight has just begun&#39; after a large protest in Delhi</h3>
+          
+          <p class="blurb">Leaders of the youth-led protest movement demanding India&#39;s election commissioner step down say the &#34;fight has just begun&#34; after they were released from detention following a large demonstration in Delhi. More on DW.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 05:28</span>
+            <a class="read-more" href="https://www.dw.com/en/india-s-cockroach-movement-leaders-say-the-fight-has-just-begun-after-a-large-protest-in-delhi/live-79631190?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Palestinian president postpones elections until late 2027</h3>
+          
+          <p class="blurb">Palestinian President Mahmoud Abbas previously committed to holding legislative elections in November 2026. He said that due to &#34;obstacles ⁠posed by Israeli measures&#34; the vote would be pushed back until late next year.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 22:54</span>
+            <a class="read-more" href="https://www.dw.com/en/palestinian-president-postpones-elections-until-late-2027/a-79630075?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Saudi Arabia: 12 killed, hundreds injured in Riyadh airport attack</h3>
+          
+          <p class="blurb">A Saudi-led coalition has vowed a &#34;decisive&#34; response after the deadliest strike on Saudi soil in over a decade. Officials have pinned the attack on Iran-backed Houthi militia in Yemen.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 22:07</span>
+            <a class="read-more" href="https://www.dw.com/en/saudi-arabia-12-killed-hundreds-injured-in-riyadh-airport-attack/a-79628862?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Money, networks and bias: Why women struggle to win seats in US politics</h3>
+          
+          <p class="blurb">The US is holding Congress and state governors elections. At all levels of US politics, women are underrepresented — but they may win some historic victories in the midterms on November 3.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 19:16</span>
+            <a class="read-more" href="https://www.dw.com/en/money-networks-and-bias-why-women-struggle-to-win-seats-in-us-politics/a-79625179?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>France and Germany lock horns over long-term EU budget</h3>
+          
+          <p class="blurb">Daggers have been drawn over the European Union&#39;s next seven-year budget, with Germany and France at loggerheads over whether Brussels should make deep cuts in a battle increasingly expected to overshoot the end of the year.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 13:49</span>
+            <a class="read-more" href="https://www.thelocal.de/20261010/france-germany-lock-horns-over-long-term-eu-budget" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Germany)</div>
+          <h3>Operations Plan Germany: How the Bundeswehr trains for NATO collective defense</h3>
+          
+          <p class="blurb">How prepared is Germany for national defense? The answer lies in the Operations Plan Germany. Military exercises such as &#34;Red Storm Charlie&#34; are designed to put these preparations to the test in realistic scenarios.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 12:02</span>
+            <a class="read-more" href="https://www.dw.com/en/operations-plan-germany-how-the-bundeswehr-trains-for-nato-collective-defense/a-79553793?maca=en-rss-en-ger-1023-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-2">
+      <div class="section-header">
+        <h2>Economy &amp; Business</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Couples looking to have children often turn to surrogacy agencies in Georgia without understanding the hidden costs</h3>
+          
+          <p class="blurb">Georgia became a hub for surrogate pregnancies after Russia&#39;s full-scale invasion of Ukraine in 2022. DW spoke with parents, and those who wanted to become parents, about the hidden costs of a booming industry.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 07:45</span>
+            <a class="read-more" href="https://www.dw.com/en/couples-looking-to-have-children-often-turn-to-surrogacy-agencies-in-georgia-without-understanding-the-hidden-costs/a-79629971?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Middle Corridor: Can Bulgaria be a safe gateway for Asian imports to the EU?</h3>
+          
+          <p class="blurb">The EU wants more trade via the Middle Corridor, which could bring big benefits for Bulgaria. But Tuesday&#39;s drone attacks on commercial ships off the Bulgarian coast are a stark reminder of the security risks involved.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 08, 08:38</span>
+            <a class="read-more" href="https://www.dw.com/en/middle-corridor-can-bulgaria-be-a-safe-gateway-for-asian-imports-to-the-eu/a-79584530?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Germany news: Volkswagen ends collective wage agreements</h3>
+          
+          <p class="blurb">In an effort to cut costs, automaker Volkswagen terminated most of its collective wage agreements in Germany. This could reignite disputes with employee representatives.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 30, 08:10</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-news-volkswagen-ends-collective-wage-agreements/live-79481802?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Global trade weathers Iran, Ukraine and Trump&#39;s tariffs</h3>
+          
+          <p class="blurb">Over the past six years, COVID, two wars and Donald Trump&#39;s tariffs have shaken world trade. With globalization already stalling, is this a temporary shock or the start of a great reversal?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 29, 10:35</span>
+            <a class="read-more" href="https://www.dw.com/en/global-trade-weathers-iran-ukraine-and-trump-s-tariffs/a-79352643?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Will Germany have enough gas this winter amid energy supply crunch?</h3>
+          
+          <p class="blurb">Germany&#39;s gas storage sites are far less full than in recent years. Officials say supplies are secure, but analysts warn that a cold winter or import disruptions could push prices higher. So how secure is the supply?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 22, 08:25</span>
+            <a class="read-more" href="https://www.dw.com/en/will-germany-have-enough-gas-this-winter-amid-energy-supply-crunch/a-79360317?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Women&#39;s football in Germany booming, but still much to do</h3>
+          
+          <p class="blurb">Women&#39;s football is growing rapidly, particularly in Germany. Nevertheless, equal pay and investment remain major talking points.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 19, 04:42</span>
+            <a class="read-more" href="https://www.dw.com/en/women-s-football-in-germany-booming-but-still-much-to-do/a-79291687?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>How extreme heat is hitting wallets</h3>
+          
+          <p class="blurb">Heat waves, wildfires and floods have cascading economic impacts, causing incomes to decline and the price of basic goods to rise. The trend will escalate as temperatures continue to increase.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 16, 08:25</span>
+            <a class="read-more" href="https://www.dw.com/en/how-extreme-heat-is-hitting-wallets/a-79268306?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Africa&#39;s richest man Dangote&#39;s IPO out of reach in Nigeria</h3>
+          
+          <p class="blurb">Dangote seeks $1.6 billion from investors to finance a $14.3 billion expansion and thus double the oil refinery&#39;s capacity. The offer could give millions of Nigerians a stake in the company. But who can truly afford it?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 14, 14:12</span>
+            <a class="read-more" href="https://www.dw.com/en/africa-s-richest-man-dangote-s-ipo-out-of-reach-in-nigeria/a-79263398?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-3">
+      <div class="section-header">
+        <h2>Society &amp; Immigration</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Ukrainian prisoners of war and defectors have been gathered into a Russian battalion to face Ukrainian forces — why? And how?</h3>
+          
+          <p class="blurb">Russia has announced a battalion consisting of Ukrainian &#34;volunteers.&#34; But veterans and former prisoners of war share very different accounts.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 06:38</span>
+            <a class="read-more" href="https://www.dw.com/en/ukrainian-prisoners-of-war-and-defectors-have-been-gathered-into-a-russian-battalion-to-face-ukrainian-forces-why-and-how/a-79629555?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>US: Justice Department probes Trump&#39;s press pool boycott for antitrust violation</h3>
+          
+          <p class="blurb">The Department of Justice is investigating whether the five news organizations violated antitrust laws when they suspended their coverage of Trump in protest. The networks under probe are ABC, CBS, CNN, NBC and Fox News.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 03:59</span>
+            <a class="read-more" href="https://www.dw.com/en/us-justice-department-probes-trump-s-press-pool-boycott-for-antitrust-violation/a-79631008?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Shooter kills 8 people and himself in Pennsylvania — police</h3>
+          
+          <p class="blurb">The 45-year-old shooter, who is yet to be identified, carried out the killings at his home in Erie. Pennsylvania Governor Josh Shapiro offered support as the lakeside city grieves.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 01:52</span>
+            <a class="read-more" href="https://www.dw.com/en/shooter-kills-8-people-and-himself-in-pennsylvania-police/a-79630735?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Poland: Lifeline for Ukrainian refugees confronts donor fatigue and online abuse as anti-Ukrainian sentiment grows</h3>
+          
+          <p class="blurb">A Ukrainian woman who fled the war in her country built a lifeline for refugees in Poland. Now her organization faces donor fatigue, funding cuts and rising hostility as support for Ukrainians in Poland wanes.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 12:50</span>
+            <a class="read-more" href="https://www.dw.com/en/poland-lifeline-for-ukrainian-refugees-confronts-donor-fatigue-and-online-abuse-as-anti-ukrainian-sentiment-grows/a-79613292?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Police search for puma near Munich airport</h3>
+          
+          <p class="blurb">After a local hunter reported a &#39;big cat sighting&#39; near Munich, local police have deployed drones, dogs and a helicopter to comb the surrounding region.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 08, 14:37</span>
+            <a class="read-more" href="https://www.thelocal.de/20261008/police-search-for-puma-near-munich-airport" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Seven questions foreign residents should ask before buying property in Germany</h3>
+          
+          <p class="blurb">With mortgage rates above four percent and rents rising in many cities, deciding whether to buy a home right now in Germany is complicated. Here are seven questions foreign residents should ask themselves before taking the plunge.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 08, 13:12</span>
+            <a class="read-more" href="https://www.thelocal.de/20261008/seven-questions-foreign-residents-should-ask-before-buying-property-in-germany" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Australia, New Zealand probe Flydubai pilot&#39;s time there</h3>
+          
+          <p class="blurb">The Flydubai pilot from Oman suspected of trying to crash a plane in Israel spent time in Oceania as a young man. Police in both Australia and New Zealand said they would investigate his links to the countries.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 05, 15:02</span>
+            <a class="read-more" href="https://www.dw.com/en/australia-new-zealand-probe-flydubai-pilot-s-time-there/a-79551423?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Hundreds of French schools shut, teen loses hand in protests</h3>
+          
+          <p class="blurb">The student protests that rocked France last week have prompted authorities to keep up to 500 schools closed on Monday. A teenage boy lost his hand, seemingly while trying to pick up a police tear gas grenade.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 05, 05:48</span>
+            <a class="read-more" href="https://www.dw.com/en/hundreds-of-french-schools-shut-teen-loses-hand-in-protests/a-79542656?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-4">
+      <div class="section-header">
+        <h2>Sports</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Inside Germany: How joining sports clubs helped me find my place in Berlin</h3>
+          
+          <p class="blurb">Sports clubs have a knack for turning strangers into locals. In this week&#39;s Inside Germany, journalist Tom Pugh explains how playing football and tennis helped him find a home in Berlin.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 09:20</span>
+            <a class="read-more" href="https://www.thelocal.de/20261010/inside-germany-how-joining-sports-clubs-helped-me-find-my-place-in-berlin" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>World Cup 2034: Does Saudi Arabia shelving Neom Stadium spell trouble?</h3>
+          
+          <p class="blurb">Since winning the right to hold the 2034 World Cup unopposed, Saudi Arabia has been pulling away from sport. With reports that its most ambitious stadium project will be abandoned, what does this mean for the World Cup?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 11:43</span>
+            <a class="read-more" href="https://www.dw.com/en/world-cup-2034-does-saudi-arabia-shelving-neom-stadium-spell-trouble/a-79592948?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Germany women&#39;s football team: Can Ena Mahmutovic make a case to become Germany&#39;s next No.1 goalkeeper?</h3>
+          
+          <p class="blurb">The women&#39;s friendlies against Australia and Japan present an opportunity for Ena Mahmutovic to make her case for succeeding Ann-Katrin Berger as Germany&#39;s first-choice goalkeeper.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 09:23</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-women-s-football-team-can-ena-mahmutovic-make-a-case-to-become-germany-s-next-no-1-goalkeeper/a-79609341?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>South Korea recalls Ukraine ambassador amid POW dispute</h3>
+          
+          <p class="blurb">South Korea has said it will recall its ambassador to Ukraine. Seoul is upset about a transfer of North Korean prisoners of war being made public knowledge at the UN and had demanded — but not received — an apology.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 08, 10:55</span>
+            <a class="read-more" href="https://www.dw.com/en/south-korea-recalls-ukraine-ambassador-amid-pow-dispute/a-79590511?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Ronaldo stays on under cloud as Messi exits internationals</h3>
+          
+          <p class="blurb">Just hours before Lionel Messi played his last match for Argentina, Cristiano Ronaldo posted his latest salvo in a row with Portugal. Ronaldo wants to play on despite the troubles, while Messi bathed in adulation.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 07, 09:23</span>
+            <a class="read-more" href="https://www.dw.com/en/ronaldo-stays-on-under-cloud-as-messi-exits-internationals/a-79574551?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Sports)</div>
+          <h3>Football: Lionel Messi plays final game for Argentina</h3>
+          
+          <p class="blurb">Argentinian superstar Lionel Messi bowed out of international football with one last goal for his country. For football in Argentina, and indeed across the world, it&#39;s the end of an era.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 07, 02:35</span>
+            <a class="read-more" href="https://www.dw.com/en/football-lionel-messi-plays-final-game-for-argentina/a-79570608?maca=en-rss-en-sports-1027-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Munich up against at least six competitors for 2036 Olympics</h3>
+          
+          <p class="blurb">The International Olympic Committee has revealed the six other countries intending to bid for the 2036 Olympic Games. This comes after Germany selected Munich as its Olympic candidate.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 06, 19:54</span>
+            <a class="read-more" href="https://www.dw.com/en/munich-up-against-at-least-six-competitors-for-2036-olympics/a-79566678?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Jürgen Klopp faces myriad of issues after rough start with Germany</h3>
+          
+          <p class="blurb">Jürgen Klopp has done things a little differently since becoming Germany coach. Casting a wider net for talent and trying to connect with players and country haven&#39;t made an immediate impact, but he is not bowed.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 05, 10:34</span>
+            <a class="read-more" href="https://www.dw.com/en/jürgen-klopp-faces-myriad-of-issues-after-rough-start-with-germany/a-79547308?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-5">
+      <div class="section-header">
+        <h2>Education &amp; Science</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Poland on alert amid possible attack on PM, defense minister</h3>
+          
+          <p class="blurb">Poland was holding an emergency meeting after police received information about a possible assassination plot against PM Donald Tusk. The meeting comes amid a wave of violence at Polish schools this week.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 10:48</span>
+            <a class="read-more" href="https://www.dw.com/en/poland-on-alert-amid-possible-attack-on-pm-defense-minister/a-79633128?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Yemen&#39;s Houthis warn passengers not to use Saudi airports</h3>
+          
+          <p class="blurb">The warning from the Iran-backed rebels comes a day after a missile attack on Riyadh airport killed 12 people and injured more than 300. The airport will remain closed until at least Sunday night.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 09:35</span>
+            <a class="read-more" href="https://www.dw.com/en/yemen-s-houthis-warn-passengers-not-to-use-saudi-airports/a-79632306?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Storm Isaias leaves 4 dead as it moves across southern US</h3>
+          
+          <p class="blurb">The storm, which is now a post-tropical cyclone, had made landfall near Destin, Florida on Friday evening. The storm brings heavy rainfall and powerful winds and has caused mass power outages in Florida and Alabama.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 23:09</span>
+            <a class="read-more" href="https://www.dw.com/en/storm-isaias-leaves-4-dead-as-it-moves-across-southern-us/a-79630125?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Eritrea urges UN deterrence measures against Ethiopia</h3>
+          
+          <p class="blurb">Eritrea has officially requested UN Security Council assistance over the conflict in Tigray. Both Eritrea and Ethiopia accuse each other of fueling regional instability.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 18:32</span>
+            <a class="read-more" href="https://www.dw.com/en/eritrea-urges-un-deterrence-measures-against-ethiopia/a-79629670?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Trump slams Zelenskyy, says Ukraine should elect new president</h3>
+          
+          <p class="blurb">President Trump has criticized Volodymyr Zelenskyy for not making a deal with Russia to end the Ukraine war. Trump also warned Kyiv against targeting Russian oil refineries that will supply the US with diesel fuel.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 17:48</span>
+            <a class="read-more" href="https://www.dw.com/en/trump-slams-zelenskyy-says-ukraine-should-elect-new-president/a-79629740?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>German green power workers protest planned subsidy cuts</h3>
+          
+          <p class="blurb">Thousands of workers from Germany&#39;s renewable energy sector and environmental activists demonstrated outside parliament in Berlin on Friday against the conservative-led government&#39;s plans to cut subsidies for the industry.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 14:07</span>
+            <a class="read-more" href="https://www.thelocal.de/20261010/german-green-power-workers-protest-planned-subsidy-cuts" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Germany)</div>
+          <h3>&#39;Ragebait&#39; is the 2026 German Youth Word of the Year</h3>
+          
+          <p class="blurb">Already named the 2025 Oxford Word of the Year, &#34;rage bait&#34; has also been widely adopted in German slang.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 13:36</span>
+            <a class="read-more" href="https://www.dw.com/en/ragebait-is-the-2026-german-youth-word-of-the-year/a-79608158?maca=en-rss-en-ger-1023-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Taiwan to boost military spending to &#39;deter war&#39; with China</h3>
+          
+          <p class="blurb">President Lai Ching-te ⁠said in a National Day speech that his country is boosting defense spending to &#39;deter war&#39; with China. It comes after US President Donald Trump asked Taiwan to pay for US protection.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 09:38</span>
+            <a class="read-more" href="https://www.dw.com/en/taiwan-to-boost-military-spending-to-deter-war-with-china/a-79625346?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-6">
+      <div class="section-header">
+        <h2>Culture &amp; Entertainment</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Is China seeking to restrict Taiwan&#39;s cultural presence?</h3>
+          
+          <p class="blurb">From coffee competitions to literature awards, Beijing appears to be working to limit Taiwan&#39;s international cultural and political impact.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 10, 06:19</span>
+            <a class="read-more" href="https://www.dw.com/en/is-china-seeking-to-restrict-taiwan-s-cultural-presence/a-79610947?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Macron and Steinmeier struggle to revive Franco-German ties</h3>
+          
+          <p class="blurb">Presidents Frank-Walter Steinmeier and Emmanuel Macron are about to step down from their offices. Their meeting in France made it clear how urgently the Franco-German partnership needs new momentum.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 15:17</span>
+            <a class="read-more" href="https://www.dw.com/en/macron-and-steinmeier-struggle-to-revive-franco-german-ties/a-79618635?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Author or artificial intelligence? Literature in crisis</h3>
+          
+          <p class="blurb">AI is a hot topic at this year&#39;s Frankfurt Book Fair. An international literary scandal has raised questions about machine-generated texts.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 15:04</span>
+            <a class="read-more" href="https://www.dw.com/en/author-or-artificial-intelligence-literature-in-crisis/a-79618610?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Art for freedom: Maria Kalesnikava in Bonn</h3>
+          
+          <p class="blurb">The Belarusian musician and civil rights activist Maria Kalesnikava held the keynote speech on the importance of art at the 2026 Beethovenfest in Bonn. She also visited DW.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 13:03</span>
+            <a class="read-more" href="https://www.dw.com/en/art-for-freedom-maria-kalesnikava-in-bonn/a-79612009?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>2026 Nobel Prize winner Anne Carson: Where to start reading</h3>
+          
+          <p class="blurb">The works of this year&#39;s Nobel Literature Prize-winning poet and essayist Anne Carson can feel slightly daunting. Here are some keys to understanding her universe.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 08, 14:57</span>
+            <a class="read-more" href="https://www.dw.com/en/2026-nobel-prize-winner-anne-carson-where-to-start-reading/a-79598953?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Culture)</div>
+          <h3>Why music in Iran is more than just entertainment</h3>
+          
+          <p class="blurb">Iranian authorities are trying to persuade prominent singers in exile to return home. While the state seeks to harness music as a political tool, music has also become a powerful expression of dissent and resistance.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 08, 05:20</span>
+            <a class="read-more" href="https://www.dw.com/en/why-music-in-iran-is-more-than-just-entertainment/a-79583224?maca=en-rss-en-cul-2090-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>90s art scene in the UK: An international, edgy trendsetter</h3>
+          
+          <p class="blurb">The 1990s are remembered for Britpop and provocative fashion, but beyond the nostalgia, it was a decade of cultural experimentation and social change. Tate Britain&#39;s new exhibition looks past the familiar icons.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 07, 15:18</span>
+            <a class="read-more" href="https://www.dw.com/en/90s-art-scene-in-the-uk-an-international-edgy-trendsetter/a-79581777?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Nobelitis — How winning a Nobel Prize can give you delusions of grandeur</h3>
+          
+          <p class="blurb">After being chosen for one of the world&#39;s most prestigious awards, some Nobel laureates lose touch with reality and suddenly start spouting unscientific nonsense. They&#39;re afflicted by what some have called &#34;Nobelitis.&#34;</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 07, 08:58</span>
+            <a class="read-more" href="https://www.dw.com/en/nobelitis-how-winning-a-nobel-prize-can-give-you-delusions-of-grandeur/a-79525772?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-7">
+      <div class="section-header">
+        <h2>Local &amp; Regional</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">6 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>IN PICTURES: Thousands join pro-Palestinian march in Berlin</h3>
+          
+          <p class="blurb">Thousands of people on Saturday joined a pro-Palestinian march in Berlin calling for an end to Israeli strikes on Gaza, three years after Hamas&#39;s October 7 attack.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 10:43</span>
+            <a class="read-more" href="https://www.thelocal.de/20261011/in-pictures-thousands-join-pro-palestinian-marches-in-berlin" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Would you drink the kebab water in Berlin?</h3>
+          
+          <p class="blurb">Feasting on döner kebab is a sort-of rite of passage for visitors in Germany. But whether the flavour also works as a soft-drink is up for debate.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 12:14</span>
+            <a class="read-more" href="https://www.thelocal.de/20261009/would-you-drink-the-kebab-water-in-berlin" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Munich and Cologne-Rhine-Ruhr – Germany&#39;s two remaining Olympic candidates</h3>
+          
+          <p class="blurb">Munich or the Cologne-Rhine-Ruhr region? Germany aims to host the Olympic Games again. Just two candidates are left after Berlin pulled out at the last minute.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 23, 11:12</span>
+            <a class="read-more" href="https://www.dw.com/en/munich-and-cologne-rhine-ruhr-germany-s-two-remaining-olympic-candidates/a-79386915?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Iran and US: Two countries and the pistachio between them</h3>
+          
+          <p class="blurb">The pistachios sold across the United States have a surprising history: California&#39;s trees trace their roots to Iran. Now, both regions face the same threat — their farmland is sinking as groundwater disappears.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 15, 07:48</span>
+            <a class="read-more" href="https://www.dw.com/en/iran-and-us-two-countries-and-the-pistachio-between-them/a-79224310?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card">
+          <div class="source-label">The Guardian (Germany)</div>
+          <h3>‘It’s not just about getting drunk!’ How Oktoberfest took over the UK</h3>
+          
+          <p class="blurb">Bavaria’s boozy blowout has inspired dozens of British tributes, from Belfast to Beverley, Cardiff to Cambridge. But what’s the attraction, other than the beer and the bratwurst?Under a sea of Bavarian bunting, vendors hand out steins of pilsner, dunkel and weissbier, alongside platters of bratwurst, pork knuckle and pretzels. The lederhosen-clad Bettesteiner Footstompers lead the cheering crowd in a boisterous oompah singalong: “Eins, zwei, g’suffa!” (“One, two, drink up!”) Foot-tapping, glass-clinking and swaying soon turn into dancing, and eventually a full-blown conga.The spirit of Oktoberfest is well and truly upon us – but Munich is more than 500 miles away. My friends and I are at Wünder Harbour in Folkestone, Kent, a homage to the German event. Wünder Harbour has been held since 2023, first over one weekend, and now four as its popularity has rocketed. It is just one of scores of Oktoberfest tributes all over the UK, from tiny bars to enormous marquees in pretty much every major city. Continue reading...</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 03, 09:00</span>
+            <a class="read-more" href="https://www.theguardian.com/culture/2026/oct/03/oktoberfest-uk-sites-pilsner-oompah-bratwurst" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card">
+          <div class="source-label">The Guardian (Germany)</div>
+          <h3>‘Like caring for a pet’: the app that lets you know if your neighbourhood tree is thirsty</h3>
+          
+          <p class="blurb">Gieß den Kiez app shows trees in critical need of watering and can be adopted by other heat-stressed cities around the worldAmanda Gläser-Bligh sometimes attracts puzzled looks when she goes to water the eight-year-old street tree she has adopted outside her door in Charlottenburg, Berlin.“I named her Linda the linden,” she says. “Berliners are not always known for being super friendly but most people react really positively when they find out what I’m doing.” Continue reading...</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 02, 04:00</span>
+            <a class="read-more" href="https://www.theguardian.com/environment/2026/oct/02/open-source-tree-map-berlin-water-urban-forest" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-8">
+      <div class="section-header">
+        <h2>General News</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Germany)</div>
+          <h3>Demographic change: Germany&#39;s population is declining, but not everywhere</h3>
+          
+          <p class="blurb">By 2045, Germany will have more older people, fewer workers, and a smaller population overall. Yet some regions will defy this trend. Their success depends on how much they have to offer.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 11, 07:21</span>
+            <a class="read-more" href="https://www.dw.com/en/demographic-change-germany-s-population-is-declining-but-not-everywhere/a-79615807?maca=en-rss-en-ger-1023-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Seven poisonous mushrooms to avoid when foraging in Germany</h3>
+          
+          <p class="blurb">Germany&#39;s mushroom season draws thousands of people into the forests every autumn. But some of the country&#39;s most dangerous mushrooms closely resemble edible varieties – and a single mistake can potentially be fatal.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 14:51</span>
+            <a class="read-more" href="https://www.thelocal.de/20261009/seven-poisonous-mushrooms-to-avoid-when-foraging-in-germany" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>How Germany’s plan to test 4-year-olds will affect bilingual families</h3>
+          
+          <p class="blurb">A new childcare reform could introduce developmental assessments for young children and extra support in daycare centres. Here&#39;s what foreign families in Germany need to know.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 09, 09:42</span>
+            <a class="read-more" href="https://www.thelocal.de/20261009/how-germanys-plan-to-test-4-year-olds-will-affect-bilingual-families" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Early-onset cancer rising worldwide: Causes, risk, prevention</h3>
+          
+          <p class="blurb">Across Latin America, early-onset cancer rates have risen, especially of bowel, breast and cervical cancers. But it is a worldwide trend.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 08, 13:26</span>
+            <a class="read-more" href="https://www.dw.com/en/early-onset-cancer-rising-worldwide-causes-risk-prevention/a-79597097?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>German spy scandal threatens national security</h3>
+          
+          <p class="blurb">The arrest of Germany&#39;s former intelligence chief August Hanning could undermine national security, experts warn, as allies may reconsider their intelligence relationships.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 07, 12:39</span>
+            <a class="read-more" href="https://www.dw.com/en/german-spy-scandal-threatens-national-security/a-79580000?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Germany shaken by espionage and treason allegations</h3>
+          
+          <p class="blurb">The former head of Germany&#39;s foreign intelligence service, the BND, has been accused of spying for a foreign country. Never before has a German official of August Hanning&#39;s stature been accused of treason.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 06, 18:11</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-shaken-by-espionage-and-treason-allegations/a-79566578?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Germany faces a triple threat from Russia, China and domestic far-right extremists</h3>
+          
+          <p class="blurb">At a rare public hearing Germany&#39;s intelligence agencies identified Russia as the country&#39;s most dangerous adversary. The threat from China is also coming into focus. And the homegrown far right also poses a challenge.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 06, 09:41</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-faces-a-triple-threat-from-russia-china-and-domestic-far-right-extremists/a-79560490?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>What Germany&#39;s rising mortgage rates mean for home owners and buyers</h3>
+          
+          <p class="blurb">Mortgage rates on 10-year fixed-rate loans are now above four percent in Germany. What does this mean for homeowners and buyers?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Sep 23, 10:04</span>
+            <a class="read-more" href="https://www.thelocal.de/20260923/what-germanys-rising-mortgage-rates-mean-for-home-owners-and-buyers" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <div class="footer-title">Germany Daily</div>
+      <p>
+        Content sourced exclusively from RSS feed metadata. All original articles remain the property of their respective publishers.<br />
+        RSS syndication is an open standard; aggregation is its intended purpose. No article body content was fetched or reproduced.<br />
+        Links open the original article on the publisher&rsquo;s website.
+      </p>
+    </div>
+    <div class="sources">
+      <strong>Sources</strong><br />
+      Deutsche Welle<br />
+      The Local Germany<br />
+      The Guardian<br />
+      BBC Europe
+    </div>
+  </footer>
+
+</body>
+</html>
