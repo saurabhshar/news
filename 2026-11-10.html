@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Germany Daily &mdash; November 10, 2026</title>
+  <style>
+    /* ─── Fonts ─── */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap');
+
+    /* ─── Variables ─── */
+    :root {
+      --ink:       #1c1c1c;
+      --ink-soft:  #3d3d3d;
+      --ink-faint: #767676;
+      --paper:     #faf7f2;
+      --paper-warm:#f2ede4;
+      --gold:      #b8860b;
+      --gold-light:#d4a843;
+      --rule:      #1c1c1c;
+      --rule-thin: #c8bfa8;
+      --red-flag:  #9b1c1c;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 16px;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--gold); }
+
+    /* ─── Top ribbon ─── */
+    .top-ribbon {
+      background: var(--ink);
+      color: #aaa;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      padding: 0.45rem 2rem;
+    }
+    .top-ribbon span { color: #ccc; }
+
+    /* ─── Masthead ─── */
+    .masthead {
+      background: var(--paper);
+      border-top: 4px solid var(--ink);
+      border-bottom: 1px solid var(--rule-thin);
+      text-align: center;
+      padding: 2rem 1rem 1.4rem;
+      position: relative;
+    }
+    .masthead::after {
+      content: '';
+      display: block;
+      height: 3px;
+      background: linear-gradient(to right, transparent, var(--ink) 20%, var(--ink) 80%, transparent);
+      margin-top: 1.4rem;
+    }
+    .masthead .flag-line {
+      font-size: 1.4rem;
+      letter-spacing: 0.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--ink-faint);
+    }
+    .masthead h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--ink);
+      text-transform: uppercase;
+    }
+    .masthead .edition-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-top: 0.7rem;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .masthead .edition-bar .dot { color: var(--rule-thin); }
+    .masthead .tagline {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--gold);
+      margin-top: 0.3rem;
+    }
+
+    /* ─── Section nav bar ─── */
+    .section-nav {
+      background: var(--ink);
+      padding: 0 1rem;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    .section-nav a {
+      display: inline-block;
+      color: #ccc;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.6rem 1rem;
+      border-right: 1px solid #333;
+      transition: color 0.15s, background 0.15s;
+    }
+    .section-nav a:first-child { border-left: 1px solid #333; }
+    .section-nav a:hover { color: #fff; background: #333; }
+
+    /* ─── Page wrapper ─── */
+    .page { max-width: 1280px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+
+    /* ─── Section block ─── */
+    .section-block { margin-bottom: 3rem; }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      border-top: 3px double var(--ink);
+      padding-top: 0.5rem;
+      margin-bottom: 1.4rem;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+    .section-header .rule-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule-thin);
+      align-self: center;
+    }
+    .section-header .item-count {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+
+    /* ─── Article grid ─── */
+    .articles-grid {
+      display: grid;
+      gap: 0;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Lead story (first card) gets 2 columns × full height */
+    .articles-grid .article-card:first-child {
+      grid-column: span 2;
+      border-right: 1px solid var(--rule-thin);
+    }
+
+    /* ─── Article card ─── */
+    .article-card {
+      padding: 1.1rem 1.3rem 1rem;
+      border-top: 1px solid var(--rule-thin);
+      border-right: 1px solid var(--rule-thin);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    /* remove right border on last in each row */
+    .article-card:last-child { border-right: none; }
+
+    /* Germany badge */
+    .article-card.germany-priority::before {
+      content: 'GERMANY';
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: #fff;
+      background: var(--red-flag);
+      padding: 0.15rem 0.45rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      align-self: flex-start;
+    }
+
+    .article-card .source-label {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.35rem;
+    }
+
+    .article-card h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    /* Lead story title bigger */
+    .articles-grid .article-card:first-child h3 {
+      font-size: 1.55rem;
+      line-height: 1.25;
+    }
+
+    .article-card .blurb {
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      flex-grow: 1;
+      margin-bottom: 0.8rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .articles-grid .article-card:first-child .blurb {
+      -webkit-line-clamp: 7;
+      font-size: 0.95rem;
+    }
+
+    .article-card .card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--rule-thin);
+      padding-top: 0.5rem;
+      margin-top: auto;
+      gap: 0.5rem;
+    }
+    .article-card .pub-time {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.68rem;
+      color: var(--ink-faint);
+      white-space: nowrap;
+    }
+    .article-card .read-more {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink);
+      white-space: nowrap;
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .article-card .read-more:hover { color: var(--gold); }
+
+    /* Hover lift */
+    .article-card {
+      transition: background 0.15s;
+    }
+    .article-card:hover { background: var(--paper-warm); }
+
+    /* ─── No items ─── */
+    .no-items {
+      font-style: italic;
+      color: var(--ink-faint);
+      font-size: 0.9rem;
+      padding: 1rem 0;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      border-top: 3px double var(--ink);
+      padding: 2rem 1.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+    }
+    footer .footer-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.4rem;
+    }
+    footer p {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      line-height: 1.7;
+    }
+    footer .sources {
+      text-align: right;
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-size: 0.72rem;
+      color: var(--ink-faint);
+      line-height: 1.8;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .articles-grid .article-card:first-child {
+        grid-column: span 2;
+      }
+    }
+    @media (max-width: 560px) {
+      .articles-grid {
+        grid-template-columns: 1fr;
+      }
+      .articles-grid .article-card:first-child {
+        grid-column: span 1;
+      }
+      .article-card { border-right: none; }
+      .top-ribbon { justify-content: center; }
+      .top-ribbon .hide-mobile { display: none; }
+      footer { grid-template-columns: 1fr; }
+      footer .sources { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top ribbon -->
+  <div class="top-ribbon">
+    <span>November 10, 2026</span>
+    <span class="hide-mobile">English-language news from Germany</span>
+    <span>64 stories &middot; 5 sources</span>
+  </div>
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="flag-line">&#127465;&#127466;</div>
+    <h1>Germany Daily</h1>
+    <div class="tagline">German news in English &mdash; for immigrants &amp; expats</div>
+    <div class="edition-bar">
+      <span>Thursday Edition</span>
+      <span class="dot">&bull;</span>
+      <span>November 10, 2026</span>
+      <span class="dot">&bull;</span>
+      <span>Vol. 1</span>
+    </div>
+  </header>
+
+  <!-- Section nav -->
+  <nav class="section-nav">
+    
+    <a href="#section-1">Politics &amp; Government</a>
+    
+    <a href="#section-2">Economy &amp; Business</a>
+    
+    <a href="#section-3">Society &amp; Immigration</a>
+    
+    <a href="#section-4">Sports</a>
+    
+    <a href="#section-5">Education &amp; Science</a>
+    
+    <a href="#section-6">Culture &amp; Entertainment</a>
+    
+    <a href="#section-7">Local &amp; Regional</a>
+    
+    <a href="#section-8">General News</a>
+    
+  </nav>
+
+  <!-- Main content -->
+  <main class="page">
+    
+    <section class="section-block" id="section-1">
+      <div class="section-header">
+        <h2>Politics &amp; Government</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Bulgaria highway pileup kills 12, dozens injured: PM</h3>
+          
+          <p class="blurb">At least 12 people were killed and dozens injured in a series of crashes caused by thick fog in Bulgaria. Police, firefighters and paramedics were dispatched to the scene for the rescue operation.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 11:57</span>
+            <a class="read-more" href="https://www.dw.com/en/bulgaria-highway-pileup-kills-12-dozens-injured-pm/a-79907978?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>India: Sonia Gandhi&#39;s memoir &#39;Belonging: A Journey of Love&#39; released</h3>
+          
+          <p class="blurb">The book goes through the Italian-born matriarch&#39;s journey with one of India&#39;s most politically influential families. It has already garnered political controversy, with the ruling BJP accusing her of &#34;whitewashing.&#34;</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 11:46</span>
+            <a class="read-more" href="https://www.dw.com/en/india-sonia-gandhi-s-memoir-belonging-a-journey-of-love-released/a-79908336?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Germany news: President candidate Aigner to meet parties in Bundestag</h3>
+          
+          <p class="blurb">The presidential candidate put forward by the conservative bloc has said she won&#39;t meet with the far-right AfD. Meanwhile, Chancellor Merz is set to host Hungarian Prime Minister Magyar. DW has more.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 08:36</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-news-president-candidate-aigner-to-meet-parties-in-bundestag/live-79906440?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Today in Germany: A roundup of the latest news on Tuesday</h3>
+          
+          <p class="blurb">Foreign Minister doubts that Russia is ready to negotiate for peace, Germany among EU countries falling behind on climate targets, Ilse Aigner meets the Bundestag as Germany&#39;s likely next president and more news on Tuesday, November 10th.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 07:37</span>
+            <a class="read-more" href="https://www.thelocal.de/20261110/today-in-germany-a-roundup-of-the-latest-news-on-tuesday-148" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>India news: New Delhi ready to mediate Black Sea food corridors, says Ukraine&#39;s Zelenskyy</h3>
+          
+          <p class="blurb">Ukraine&#39;s President Volodymyr Zelenskyy said he discussed establishing &#34;food corridors&#34; in the Black Sea in a phone call with Indian Prime Minister Narendra Modi. DW has the latest.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 06:52</span>
+            <a class="read-more" href="https://www.dw.com/en/india-news-new-delhi-ready-to-mediate-black-sea-food-corridors-says-ukraine-s-zelenskyy/live-79906023?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Australia to introduce mandatory AI safeguards</h3>
+          
+          <p class="blurb">The Australian government&#39;s decision to establish an AI safety regulator comes after an OpenAI agent accessed a government medical statistics portal without authorization.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 04:55</span>
+            <a class="read-more" href="https://www.dw.com/en/australia-to-introduce-mandatory-ai-safeguards/a-79906006?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>US Pentagon chief Hegseth faces impeachment push over Iran war</h3>
+          
+          <p class="blurb">Trump critic Thomas Massie is calling for a vote to impeach Pentagon chief Pete Hegseth, accusing Hegseth of waging war without congressional approval.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 20:15</span>
+            <a class="read-more" href="https://www.dw.com/en/us-pentagon-chief-hegseth-faces-impeachment-push-over-iran-war/a-79905323?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>French officials blame Iran for supermarket fridge hacking</h3>
+          
+          <p class="blurb">The recent cyberattack on refrigerators and freezers in supermarkets in France was organized by Iran&#39;s Revolutionary Guards, French Foreign Minister Jean-Noel Barrot has said, describing the hacking as &#34;unprecedented.&#34;</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 18:33</span>
+            <a class="read-more" href="https://www.dw.com/en/french-officials-blame-iran-for-supermarket-fridge-hacking/a-79903646?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-2">
+      <div class="section-header">
+        <h2>Economy &amp; Business</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Ten of the best traditional German Christmas markets to visit in 2026</h3>
+          
+          <p class="blurb">If you only have time for one Christmas market, these ten picks from across Germany should deliver the full experience – from Glühwein and gingerbread to historic squares and handmade gifts.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 15:42</span>
+            <a class="read-more" href="https://www.thelocal.de/20261109/ten-of-the-best-traditional-german-christmas-markets-to-visit-in-2026" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>LISTED: The major German companies cutting jobs at the end of 2026</h3>
+          
+          <p class="blurb">Recent weeks and months have seen thousands of jobs cut across industries at a number of Germany&#39;s largest companies. Here&#39;s a roundup of the businesses reducing their workforces now.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 14:51</span>
+            <a class="read-more" href="https://www.thelocal.de/20261109/listed-the-major-german-companies-cutting-jobs-at-the-end-of-2026" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Why Nvidia CEO&#39;s affair with alleged Chinese spy matters for AI race</h3>
+          
+          <p class="blurb">Nvidia CEO Jensen Huang has apologized for an affair with a woman the US believes was spying for China. The story could have profound implications for the world&#39;s most valuable company and the global AI race.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 11:18</span>
+            <a class="read-more" href="https://www.dw.com/en/why-nvidia-ceo-s-affair-with-alleged-chinese-spy-matters-for-ai-race/a-79898338?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Pakistan farmers take German firms to court to pay for flood damage</h3>
+          
+          <p class="blurb">German energy giant RWE and cement company Heidelberg Materials operate far from Pakistan, but farmers affected by a devastating flood there in 2022 say they should pay for their harmful impacts on the global climate.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 10:12</span>
+            <a class="read-more" href="https://www.thelocal.de/20261109/pakistan-farmers-take-german-firms-to-court-to-pay-for-flood-damage" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Ukraine: Russia hits Kyiv with airstrikes ahead of trilateral talks</h3>
+          
+          <p class="blurb">The strikes hit a major bridge and energy facilities in the Kyiv region. President Volodymyr Zelenskyy accused Moscow of trying to &#34;push&#34; Ukraine &#34;into a blackout&#34; ahead of talks in Abu Dhabi.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 07, 09:21</span>
+            <a class="read-more" href="https://www.dw.com/en/ukraine-russia-hits-kyiv-with-airstrikes-ahead-of-trilateral-talks/a-79883851?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Tesla to &#39;wind down&#39; production of flop Cybertruck</h3>
+          
+          <p class="blurb">Elon Musk&#39;s electric pickup for the future will start to be consigned to the past next year. The Cybertruck&#39;s bulk and crude shape meant it could only pass regulatory standards in more permissive markets.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 06, 17:10</span>
+            <a class="read-more" href="https://www.dw.com/en/tesla-to-wind-down-production-of-flop-cybertruck/a-79877759?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>European shares join a global sell-off as AI spending fears rattle Wall Street and Asian markets</h3>
+          
+          <p class="blurb">European shares have fallen after sharp losses in Asia and on Wall Street. Doubts over huge AI investments and fears of curbs following the Democrats&#39; US midterm victory have rattled global markets.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 06, 09:29</span>
+            <a class="read-more" href="https://www.dw.com/en/european-shares-join-a-global-sell-off-as-ai-spending-fears-rattle-wall-street-and-asian-markets/a-79871504?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>What the Democrats&#39; midterms win means for the US economy and Trump</h3>
+          
+          <p class="blurb">From high oil prices and data centers to tariffs and mounting debt, economic concerns played a key role in the crushing defeat of President Donald Trump&#39;s Republicans. So can the Democrats now make a difference?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 05, 07:03</span>
+            <a class="read-more" href="https://www.dw.com/en/what-the-democrats-midterms-win-means-for-the-us-economy-and-trump/a-79853716?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-3">
+      <div class="section-header">
+        <h2>Society &amp; Immigration</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Spain: Police officer killed in Oviedo after neighborhood dispute escalates with explosion</h3>
+          
+          <p class="blurb">After security services responded to a shooting, a bomb found in a backpack nearby detonated before it could be defused.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 10:12</span>
+            <a class="read-more" href="https://www.dw.com/en/spain-police-officer-killed-in-oviedo-after-neighborhood-dispute-escalates-with-explosion/a-79907509?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Why malnutrition can go unnoticed, and what that means for our health</h3>
+          
+          <p class="blurb">More than 2 billion people worldwide suffer from nutrient deficiencies, most of them in the Global South. The health consequences can be devastating.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 05:48</span>
+            <a class="read-more" href="https://www.dw.com/en/why-malnutrition-can-go-unnoticed-and-what-that-means-for-our-health/a-79871016?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Pope Leo draws 2.5 million in Buenos Aires, renews warning over Milei&#39;s austerity</h3>
+          
+          <p class="blurb">Some 2.5 million people have attended Pope Leo&#39;s Mass in Buenos Aires, his largest gathering yet. The pontiff once again called for protecting the vulnerable as President Milei cuts disability care and social services.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 18:38</span>
+            <a class="read-more" href="https://www.dw.com/en/pope-leo-draws-2-5-million-in-buenos-aires-renews-warning-over-milei-s-austerity/a-79904137?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>German pensions forecast to rise by 4.1 percent in 2027</h3>
+          
+          <p class="blurb">Germany’s pensioners should receive a bump in pay-outs from July 2027. The forecast spells extra monthly income for retirees, but rising costs will soon affect workers and employers.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 11:08</span>
+            <a class="read-more" href="https://www.thelocal.de/20261109/german-pensions-forecast-to-rise-by-4-1-percent-in-2027" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Krakow mass shooting suspect has died in hospital, police in Poland say</h3>
+          
+          <p class="blurb">The alleged gunman who killed six people in a shooting spree in the Polish city of Krakow has died of injuries sustained in a shootout with police, authorities say.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 06:53</span>
+            <a class="read-more" href="https://www.dw.com/en/krakow-mass-shooting-suspect-has-died-in-hospital-police-in-poland-say/a-79895626?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Germany hopes to host world ice hockey championship — without Russia</h3>
+          
+          <p class="blurb">International protests continue after a court ruled that Russia must be allowed to return to international ice hockey. Germany is seeking a solution that will allow the country to host next year&#39;s world championship.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 07, 11:06</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-hopes-to-host-world-ice-hockey-championship-without-russia/a-79879536?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Germany’s Gen Z protests spark debate on integration, bias</h3>
+          
+          <p class="blurb">Political debate about the recent Gen Z riots have raised the question: Can Germany talk about problems with integration without putting entire groups of people under suspicion?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 05, 16:31</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-s-gen-z-protests-spark-debate-on-integration-bias/a-79868497?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>The 2011 discovery of neo-Nazi killers aired biases in German policing</h3>
+          
+          <p class="blurb">Many questions still surround the National Socialist Underground whose existence was revealed by neo-Nazi terrorist Beate Zschäpe on November 4, 2011. How has German society reacted to NSU crimes? Has justice been done?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 04, 17:16</span>
+            <a class="read-more" href="https://www.dw.com/en/the-2011-discovery-of-neo-nazi-killers-aired-biases-in-german-policing/a-79857781?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-4">
+      <div class="section-header">
+        <h2>Sports</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Germany)</div>
+          <h3>Borussia Dortmund&#39;s Felix Nmecha and the question of religion</h3>
+          
+          <p class="blurb">Felix Nmecha&#39;s &#34;Crowns down&#34; celebration has drawn criticism from a Borussia Dortmund fan club, reopening debate over faith, inclusion and religious messaging in football.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 11:12</span>
+            <a class="read-more" href="https://www.dw.com/en/borussia-dortmund-s-felix-nmecha-and-the-question-of-religion/a-79900432?maca=en-rss-en-ger-1023-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Ice hockey: Norway says it&#39;s been kicked out of World Juniors in favor of Russia</h3>
+          
+          <p class="blurb">The wrangling over Russia&#39;s return to international ice hockey continues, with Norway saying it has been kicked out of the next major tournament to accommodate Russia. Switzerland has joined a &#34;boycott.&#34;</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 16:02</span>
+            <a class="read-more" href="https://www.dw.com/en/ice-hockey-norway-says-it-s-been-kicked-out-of-world-juniors-in-favor-of-russia/a-79901844?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>What to know about the IIHF Women&#39;s Ice Hockey World Championship</h3>
+          
+          <p class="blurb">As ice hockey&#39;s governing body continues to wrangle over how to respond to a CAS order to reinstate Russia to international play, the top women&#39;s tournament gets underway in Denmark without Russia.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 06, 13:26</span>
+            <a class="read-more" href="https://www.dw.com/en/what-to-know-about-the-iihf-women-s-ice-hockey-world-championship/a-79876148?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Exercise coaching boosts colon cancer survival</h3>
+          
+          <p class="blurb">Evidence suggests exercise can keep more cancer patients alive. But what does &#34;living longer&#34; actually mean, and who does it apply to?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 06, 11:11</span>
+            <a class="read-more" href="https://www.dw.com/en/exercise-coaching-boosts-colon-cancer-survival/a-79856133?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Russia is back in world sport, but who is drug testing its athletes?</h3>
+          
+          <p class="blurb">DW has found that three-quarters of Russia&#39;s weightlifting team had no independent out-of-competition testing before this year&#39;s world championships, despite the country&#39;s doping history.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 05, 14:51</span>
+            <a class="read-more" href="https://www.dw.com/en/russia-is-back-in-world-sport-but-who-is-drug-testing-its-athletes/a-79862467?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Cristiano Ronaldo announces retirement from international football</h3>
+          
+          <p class="blurb">The announcement by the footballing legend comes just weeks after a public spat with Portugal coach Jorge Jesus over playing time.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 05, 11:52</span>
+            <a class="read-more" href="https://www.dw.com/en/cristiano-ronaldo-announces-retirement-from-international-football/a-79864361?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Leading ice hockey nations, sponsors oppose Russia&#39;s return</h3>
+          
+          <p class="blurb">Ice hockey&#39;s governing body says the impact of a court decision forcing it to reinstate Russia presents &#34;significant practical and sporting challenges.&#34; Several leading nations say they won&#39;t play against Russian teams.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 04, 13:27</span>
+            <a class="read-more" href="https://www.dw.com/en/leading-ice-hockey-nations-sponsors-oppose-russia-s-return/a-79853742?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Football: Spanish player dies on after cardiac arrest on the pitch</h3>
+          
+          <p class="blurb">Tenerife forward Jesus de Miguel has died following a collision with the opposing goalkeeper. The Spanish second-division club has said it is &#34;heartbroken&#34; by the loss.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 03, 11:52</span>
+            <a class="read-more" href="https://www.dw.com/en/football-spanish-player-dies-on-after-cardiac-arrest-on-the-pitch/a-79839398?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-5">
+      <div class="section-header">
+        <h2>Education &amp; Science</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Fact check: Online disinformation rife after Krakow mass shooting</h3>
+          
+          <p class="blurb">Fake and AI-manipulated images spread online in the hours after the Krakow attack, fueling false narratives about the mass shooting. DW Fact Check examined what&#39;s real, and what isn&#39;t.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 10:02</span>
+            <a class="read-more" href="https://www.dw.com/en/fact-check-online-disinformation-rife-after-krakow-mass-shooting/a-79900620?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Why electrification is the climate game changer we need</h3>
+          
+          <p class="blurb">From EVs and electric buses on the road, heat pumps warming homes and solar panels powering appliances, the shift to electrifying tech is already in full swing. But what exactly does &#34;electrification&#34; mean?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 08:00</span>
+            <a class="read-more" href="https://www.dw.com/en/why-electrification-is-the-climate-game-changer-we-need/a-79615979?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Will Australia push for fossil fuel exit at UN talks?</h3>
+          
+          <p class="blurb">The heat is on Australia as chief negotiator at the COP31 UN climate conference to forge a path away from coal and gas, and to protect Pacific neighbors facing rising sea levels.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 07:43</span>
+            <a class="read-more" href="https://www.dw.com/en/will-australia-push-for-fossil-fuel-exit-at-un-talks/a-79782066?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>US, Russia and Ukraine start talks in Abu Dhabi</h3>
+          
+          <p class="blurb">Peace talks between Russia, Ukraine and the US are getting underway in the United Arab Emirates. It is the first such meeting since February. DW has the latest updates.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 07:09</span>
+            <a class="read-more" href="https://www.dw.com/en/us-russia-and-ukraine-start-talks-in-abu-dhabi/live-79906232?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Iran war oil shock drives dip in global emissions, study shows</h3>
+          
+          <p class="blurb">Global carbon emissions are expected to fall slightly in 2026, but not because of major progress on climate action. Instead, it&#39;s high energy prices following the US attack on Iran that&#39;s driving the trend.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 03:58</span>
+            <a class="read-more" href="https://www.dw.com/en/iran-war-oil-shock-drives-dip-in-global-emissions-study-shows/a-79905937?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Nvidia shareholders sue Jensen Huang over alleged spy ties</h3>
+          
+          <p class="blurb">Nvidia shareholders have sued the chipmaker and its CEO, Jensen Huang, over his alleged ties to a suspected Chinese spy. The case adds to scrutiny over whether sensitive information at the AI giant was compromised.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 23:55</span>
+            <a class="read-more" href="https://www.dw.com/en/nvidia-shareholders-sue-jensen-huang-over-alleged-spy-ties/a-79905809?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>New trilateral talks on Ukraine war in Abu Dhabi: What to expect?</h3>
+          
+          <p class="blurb">Ukrainian and Russian representatives last met in February for talks on ending the war, but the same sticking points remain. Ukraine continues to demand security guarantees, which is a non-starter for Russia.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 23:46</span>
+            <a class="read-more" href="https://www.dw.com/en/new-trilateral-talks-on-ukraine-war-in-abu-dhabi-what-to-expect/a-79905734?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Germany)</div>
+          <h3>&#39;Never Again!&#39;: Holocaust remembrance under pressure</h3>
+          
+          <p class="blurb">Only a few Holocaust survivors remain who can share their stories firsthand. Meanwhile, voices calling for an end to what they describe as a &#34;cult of guilt&#34; are growing louder. How can Holocaust remembrance survive?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 08, 09:54</span>
+            <a class="read-more" href="https://www.dw.com/en/never-again-holocaust-remembrance-under-pressure/a-79840894?maca=en-rss-en-ger-1023-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-6">
+      <div class="section-header">
+        <h2>Culture &amp; Entertainment</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>How and when can you watch You Can See Everything in Germany?</h3>
+          
+          <p class="blurb">The world is abuzz over the new documentary film following Theranos founder Elizabeth Holmes in the weeks before her prison sentence for fraud. How can you watch it in Germany?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 12:25</span>
+            <a class="read-more" href="https://www.thelocal.de/20261110/how-and-when-can-you-watch-you-can-see-everything-in-germany" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>BMW reports lower Q3 earnings as China woes mount</h3>
+          
+          <p class="blurb">BMW reports a drop in profits in the July to September quarter amid fierce competition from China.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 04, 10:25</span>
+            <a class="read-more" href="https://www.dw.com/en/bmw-reports-lower-q3-earnings-as-china-woes-mount/a-79850847?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Germany&#39;s celebrated children&#39;s author Janosch has died</h3>
+          
+          <p class="blurb">Bear, Tiger and Tiger-Duck: The author and illustrator Janosch achieved world fame with his heartwarming children&#39;s figures. He died at the age of 95.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 04, 10:16</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-s-celebrated-children-s-author-janosch-has-died/a-79851600?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>How Berlin&#39;s Arab queers are building their community</h3>
+          
+          <p class="blurb">As the co-founder of the ADIRA Drag Festival, Lebanese performance artist, drag performer, DJ and cultural organizer Hassandra has become an essential part of Berlin&#39;s queer artistic landscape.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 03, 14:37</span>
+            <a class="read-more" href="https://www.dw.com/en/how-berlin-s-arab-queers-are-building-their-community/a-79833143?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Global pedestrian Karl Bushby returns home to UK after 28-year trek</h3>
+          
+          <p class="blurb">Karl Bushby, a British man who traveled 50,000 km without transport over the past 28 years, has come home. Starting in Chile, he crossed the Americas, Russia and parts of Central Asia and Europe — almost all on foot.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 02, 12:31</span>
+            <a class="read-more" href="https://www.dw.com/en/global-pedestrian-karl-bushby-returns-home-to-uk-after-28-year-trek/a-79829564?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Brutal, revolutionary empire builder: Genghis Khan&#39;s legacy</h3>
+          
+          <p class="blurb">Berlin is host to a major exhibition on the founder of the Mongol Empire and his successors. Here&#39;s how Genghis Khan disrupted the course of history.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 20, 08:57</span>
+            <a class="read-more" href="https://www.dw.com/en/brutal-revolutionary-empire-builder-genghis-khan-s-legacy/a-79697112?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card">
+          <div class="source-label">BBC Europe</div>
+          <h3>Turkey steel factory blast kills at least 17 people</h3>
+          
+          <p class="blurb">Eyewitnesses say the explosion shook the ground, with one believing an earthquake had hit near the Habas Demir Celik plant in Aliaga.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 20:42</span>
+            <a class="read-more" href="https://www.bbc.co.uk/news/articles/cq2d6d5z9y5jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card">
+          <div class="source-label">BBC Europe</div>
+          <h3>Germans wrestle with what to do with Hitler&#39;s destroyed Eagle&#39;s Nest retreat</h3>
+          
+          <p class="blurb">While some believe the site should be partially or completely rebuilt, others want it abandoned and all memory of its Nazi past forgotten.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 08, 00:48</span>
+            <a class="read-more" href="https://www.bbc.co.uk/news/articles/cm74pk1g51nko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-7">
+      <div class="section-header">
+        <h2>Local &amp; Regional</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (Germany)</div>
+          <h3>Germany news: Germany marks fateful date of November 9</h3>
+          
+          <p class="blurb">Germany is commemorating the Nazi-led November pogroms 88 years ago. Events are also being held to mark the anniversary of the fall of the Berlin Wall in 1989. DW has more.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 07:43</span>
+            <a class="read-more" href="https://www.dw.com/en/germany-news-germany-marks-fateful-date-of-november-9/live-79895613?maca=en-rss-en-ger-1023-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Son of Iran&#39;s shah receives &#39;Freedom Prize&#39; in Frankfurt</h3>
+          
+          <p class="blurb">18,000 people gathered in Frankfurt to show support for Reza Pahlavi, the son of the Iranian monarch ousted in 1979. Factions in the opposition have accused him of not distancing himself from his father&#39;s rule.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 07, 14:38</span>
+            <a class="read-more" href="https://www.dw.com/en/son-of-iran-s-shah-receives-freedom-prize-in-frankfurt/a-79885661?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Bavaria&#39;s Aigner tipped to become Germany&#39;s first woman president</h3>
+          
+          <p class="blurb">Bavarian politician Ilse Aigner is expected to become Germany&#39;s next president in 2027, the first woman to serve as its head of state, conservative ruling party sources said Friday.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 07, 10:35</span>
+            <a class="read-more" href="https://www.thelocal.de/20261107/bavarias-aigner-tipped-to-become-germanys-first-woman-president" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Pioneering Jewish academy opens in Germany</h3>
+          
+          <p class="blurb">A Jewish academy has opened its doors in Frankfurt. The Central Council of Jews in Germany, the country’s leading Jewish umbrella group, set up the project to combat hate and promote dialogue and learning nationally.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 05, 11:57</span>
+            <a class="read-more" href="https://www.dw.com/en/pioneering-jewish-academy-opens-in-germany/a-79863293?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Cyprus: From ties with Russia to a strategic alignment with the US</h3>
+          
+          <p class="blurb">The Republic of Cyprus long balanced ties between Russia and the West. Now, it is phasing out Russian weapons, expanding defense cooperation with the United States and redefining its place in the Eastern Mediterranean.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 03, 14:28</span>
+            <a class="read-more" href="https://www.dw.com/en/cyprus-from-ties-with-russia-to-a-strategic-alignment-with-the-us/a-79841251?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>LA communities kick out Big Oil</h3>
+          
+          <p class="blurb">After years of advocacy from residents and legal battles with Big Oil, Los Angeles voted to ban drilling and phase out oil extraction in the city. It&#39;s the first city in the United States to kick the oil industry out.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 02, 14:21</span>
+            <a class="read-more" href="https://www.dw.com/en/la-communities-kick-out-big-oil/a-79830843?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Bildungsurlaub: Why is Bavaria the only German state not to offer educational leave?</h3>
+          
+          <p class="blurb">From next year, every state in Germany will offer Bildungsurlaub or educational leave for employees – except Bavaria. Why?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Feb 11, 10:39</span>
+            <a class="read-more" href="https://www.thelocal.de/20260211/bildungsurlaub-why-is-bavaria-the-only-german-state-not-to-offer-educational-leave" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card">
+          <div class="source-label">The Guardian (Germany)</div>
+          <h3>Hubert Aiwanger, prominent German politician, found dead in Berlin hotel</h3>
+          
+          <p class="blurb">Police and prosecutors open investigation into death of the 55-year-old Bavarian state deputy leaderA prominent German politician was found dead in a Berlin hotel on Wednesday, police said, adding they had launched an investigation.The cause of death of Hubert Aiwanger, 55, who was deputy leader of southern Bavaria state, was not immediately clear. Continue reading...</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 05, 00:53</span>
+            <a class="read-more" href="https://www.theguardian.com/world/2026/nov/05/hubert-aiwanger-dead-german-politician-berlin-hotel" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+    <section class="section-block" id="section-8">
+      <div class="section-header">
+        <h2>General News</h2>
+        <div class="rule-line"></div>
+        <span class="item-count">8 articles</span>
+      </div>
+
+      
+      <div class="articles-grid">
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>DR Congo: 66 soldiers sentenced to death for cowardice in conflict with FRN rebels</h3>
+          
+          <p class="blurb">Dozens of defendants were put on trial over accusations that they abandoned their posts and refused to follow direct orders.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 09:43</span>
+            <a class="read-more" href="https://www.dw.com/en/dr-congo-66-soldiers-sentenced-to-death-for-cowardice-in-conflict-with-frn-rebels/a-79906794?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>Germany plans ticket resale cap to protect fans from touts</h3>
+          
+          <p class="blurb">Hoping to see Harry Styles or U2 in Germany next year? A proposed cap could prevent resale tickets being offered at many times their face value.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 10, 09:19</span>
+            <a class="read-more" href="https://www.thelocal.de/20261110/germany-plans-ticket-resale-cap-to-protect-fans-from-touts" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Skydance replaces James Gunn and Peter Safran as DC Studios chiefs following Warner Bros. takeover</h3>
+          
+          <p class="blurb">In another major shake-up for the DC Studios, Skydance is replacing Hollywood director James Gunn and producer Peter Safran with a former Marvel executive.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 20:19</span>
+            <a class="read-more" href="https://www.dw.com/en/skydance-replaces-james-gunn-and-peter-safran-as-dc-studios-chiefs-following-warner-bros-takeover/a-79904972?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Russia: Independent Novaya Gazeta shuts its Moscow newsroom</h3>
+          
+          <p class="blurb">The investigative newspaper is closing its doors after Russian authorities labeled it a &#34;foreign agent&#34; and ordered it vacate its Moscow premises.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 09, 16:22</span>
+            <a class="read-more" href="https://www.dw.com/en/russia-independent-novaya-gazeta-shuts-its-moscow-newsroom/a-79899827?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">The Local Germany</div>
+          <h3>&#39;Last generation&#39;: Kristallnacht survivor, 94, bears witness</h3>
+          
+          <p class="blurb">For George Shefi, a 94-year-old survivor of Nazi Germany&#39;s &#34;Kristallnacht&#34;, bearing witness to the pogroms targeting Jews is his final &#34;mission&#34; -- all the more urgent in the face of a renewed wave of anti-Semitism.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 08, 16:13</span>
+            <a class="read-more" href="https://www.thelocal.de/20261108/last-generation-kristallnacht-survivor-94-bears-witness" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>36 years later: Hungary opens Communist-era secret service files</h3>
+          
+          <p class="blurb">Decades after the end of Soviet rule, Hungary is releasing all its secret service files. The disclosure is sparking fresh debate about informants, guilt and responsibility.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 04, 19:30</span>
+            <a class="read-more" href="https://www.dw.com/en/36-years-later-hungary-opens-communist-era-secret-service-files/a-79858016?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Ethnic Germans in Kazakhstan face legacy of the Soviet Union</h3>
+          
+          <p class="blurb">Kazakhstan is struggling to deal with the legacy of the Soviet dictatorship. Some 85 years ago, Stalin deported hundreds of thousands of people: Some 400,000 ethnic Germans living in the USSR were sent to Kazakhstan.</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Nov 01, 13:00</span>
+            <a class="read-more" href="https://www.dw.com/en/ethnic-germans-in-kazakhstan-face-legacy-of-the-soviet-union/a-79754048?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+        <article class="article-card germany-priority">
+          <div class="source-label">Deutsche Welle (All)</div>
+          <h3>Can we regrow damaged seagrass meadows?</h3>
+          
+          <p class="blurb">Seagrass protects coasts, shelters thousands of species and stores CO2. But some 30% of this valuable ecosystem has disappeared since the late 19th century. Can we bring it back?</p>
+          
+          <div class="card-footer">
+            <span class="pub-time">Oct 28, 10:51</span>
+            <a class="read-more" href="https://www.dw.com/en/can-we-regrow-damaged-seagrass-meadows/a-79617925?maca=en-rss-en-all-1573-rdf" target="_blank" rel="noopener">Read &rarr;</a>
+          </div>
+        </article>
+        
+      </div>
+      
+    </section>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <div class="footer-title">Germany Daily</div>
+      <p>
+        Content sourced exclusively from RSS feed metadata. All original articles remain the property of their respective publishers.<br />
+        RSS syndication is an open standard; aggregation is its intended purpose. No article body content was fetched or reproduced.<br />
+        Links open the original article on the publisher&rsquo;s website.
+      </p>
+    </div>
+    <div class="sources">
+      <strong>Sources</strong><br />
+      Deutsche Welle<br />
+      The Local Germany<br />
+      The Guardian<br />
+      BBC Europe
+    </div>
+  </footer>
+
+</body>
+</html>
